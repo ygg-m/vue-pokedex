@@ -4,7 +4,11 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <header></header>
+  <header>
+    <nav>
+      
+    </nav>
+  </header>
 </template>
 
 <style scoped lang="sass"></style>
