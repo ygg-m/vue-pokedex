@@ -111,8 +111,6 @@ article
     flex-direction: column
     gap: .5rem
 
-    .number
-
     .name
       font:
         size: 1.5rem
