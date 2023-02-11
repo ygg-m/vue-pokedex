@@ -18,6 +18,7 @@ export const useMainStore = defineStore("main", {
       try {
         const response = await axios.get(url);
         this.pokeInfo.base = response.data;
+        this.pokeList = [];
         await this.species();
       } catch (error) {
         console.error(error);
