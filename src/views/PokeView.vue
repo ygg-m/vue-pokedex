@@ -263,7 +263,7 @@ article
             justify-content: center
             flex-wrap: wrap
             gap: 1rem
-            padding: 1rem 0
+            padding: 1rem 0 0
 
             .stat
                 padding: .5rem
@@ -272,8 +272,14 @@ article
                 flex-direction: column
                 align-items: center
                 justify-content: center
+                outline: 1px solid
+                gap: .5rem
+                border-radius: .5rem
                 width: 30%
 
                 .name
                     font-size: .75rem
+
+                .value
+                    font-weight: bold
 </style>
