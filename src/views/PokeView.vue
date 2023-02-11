@@ -247,6 +247,7 @@ article
         padding: 1rem
         border-radius: .5rem
         min-width: 400px
+        outline: 1px solid
 
         .category
             display: flex
