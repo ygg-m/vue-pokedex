@@ -30,6 +30,7 @@ const { fetchPokemon } = mapActions(useMainStore, ["fetchPokemon"]);
 section
     display: flex
     justify-content: center
+    gap: 1rem
 
     padding: 1rem
     color: v.$gray-8
