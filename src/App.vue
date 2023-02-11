@@ -21,6 +21,11 @@ import "@/assets/main.css";
   </header>
 
   <RouterView />
+
+  <footer>
+    Made by <a href="https://linktr.ee/yggm">Ygor Goulart</a> with
+    <a href="https://pokeapi.co/">PokéAPI</a>
+  </footer>
 </template>
 
 <style scoped lang="sass">
@@ -50,4 +55,21 @@ nav
     transition: 200ms
     &:hover
       color: v.$orange
+
+footer
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 1rem
+  font-size: .75rem
+  color: v.$gray-4
+  transition: 100ms
+
+  &:hover
+    color: v.$gray-8
+
+  a
+    font-size: .75rem
+    padding: 0 .3rem
+    text-decoration: underline
 </style>
