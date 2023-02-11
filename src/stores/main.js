@@ -11,6 +11,7 @@ export const useMainStore = defineStore("main", {
       evolutionChain: {},
     },
     pokeList: [],
+    loading: true,
   }),
   actions: {
     async fetchPokemon(poke) {
@@ -40,7 +41,7 @@ export const useMainStore = defineStore("main", {
         const evoChainResponse = await axios.get(evoChainUrl);
         this.pokeInfo.evolutionChain = evoChainResponse.data;
         this.getEvolutionList(this.pokeInfo.evolutionChain.chain);
-        return this.pokeInfo;
+        this.loading = false;
       } catch (error) {
         console.error(error);
       }

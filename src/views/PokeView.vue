@@ -119,10 +119,13 @@ export default {
           <span class="value">{{ stat.base_stat }}</span>
         </div>
       </div>
-      <section>
-        <ul v-for="poke of pokeList">
-          <PokeCard :pokeName="poke" />
-        </ul>
+      <section class="evolutions">
+        <span class="title">Evolutions</span>
+        <div class="list">
+          <ul v-for="poke of evolutionList">
+            <PokeCard :pokeName="poke" />
+          </ul>
+        </div>
       </section>
     </div>
   </article>
@@ -139,6 +142,23 @@ article
     padding: 1rem
     text-transform: capitalize
 
+    .evolutions
+      margin-top: 1rem
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      gap: .5rem
+
+      .title
+        text-align: center
+
+      .list
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+        gap: .5rem
 
     .basic-info
         text-align: center

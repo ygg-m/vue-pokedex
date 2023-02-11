@@ -6,7 +6,7 @@ import PokeCard from "@/components/PokeCard.vue";
 import { useMainStore } from "@/stores/main.js";
 const main = useMainStore();
 
-const { input, pokeList } = storeToRefs(main);
+const { input, pokeList, loading } = storeToRefs(main);
 const { fetchPokemon } = mapActions(useMainStore, ["fetchPokemon"]);
 </script>
 
@@ -17,7 +17,7 @@ const { fetchPokemon } = mapActions(useMainStore, ["fetchPokemon"]);
       <button @click="fetchPokemon(input)"><Magnify /></button>
     </div>
   </section>
-  <section>
+  <section v-if="!loading">
     <ul v-for="poke of pokeList">
       <PokeCard :pokeName="poke" />
     </ul>
