@@ -61,29 +61,31 @@ export default {
 };
 </script>
 <template>
-  <article :class="pokeInfo.base?.types[0]?.type?.name" v-if="!loading">
-    <div class="info">
-      <span class="number">#{{ pokeInfo.base.id }}</span>
-      <span class="name">{{ pokeInfo.base.name }}</span>
-      <div class="types">
-        <div
-          :class="pokeType.type.name"
-          v-for="pokeType of pokeInfo.base.types"
-        >
-          {{ pokeType.type.name }}
+  <RouterLink :to="`/pokemon/${pokeName}`">
+    <article :class="pokeInfo.base?.types[0]?.type?.name" v-if="!loading">
+      <div class="info">
+        <span class="number">#{{ pokeInfo.base.id }}</span>
+        <span class="name">{{ pokeInfo.base.name }}</span>
+        <div class="types">
+          <div
+            :class="pokeType.type.name"
+            v-for="pokeType of pokeInfo.base.types"
+          >
+            {{ pokeType.type.name }}
+          </div>
         </div>
       </div>
-    </div>
-    <div class="image">
-      <img
-        :src="pokeInfo.base?.sprites?.front_default"
-        alt="Pokémon Official Sprite"
-      />
-    </div>
-  </article>
-  <article v-else>loading</article>
+      <div class="image">
+        <img
+          :src="pokeInfo.base?.sprites?.front_default"
+          alt="Pokémon Official Sprite"
+        />
+      </div>
+    </article>
+    <article v-else>loading</article>
+  </RouterLink>
 </template>
-<style lang="sass">
+<style lang="sass" scoped>
 @use '../assets/variables' as v
 
 article
@@ -94,7 +96,15 @@ article
   text-transform: capitalize
   padding: .5rem
   border-radius: .5rem
-  outline: 1px solid transparent
+  outline: 1px solid
+  transition: 100ms
+
+  &:hover
+    z-index: 5
+    scale: 1.05
+    -webkit-box-shadow: 0px 16px 24px 0px rgba(0,0,0,0.09)
+    -moz-box-shadow: 0px 16px 24px 0px rgba(0,0,0,0.09)
+    box-shadow: 0px 16px 24px 0px rgba(0,0,0,0.09)
 
   .info
     display: flex

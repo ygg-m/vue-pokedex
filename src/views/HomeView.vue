@@ -24,12 +24,13 @@ const { fetchPokemon } = mapActions(useMainStore, ["fetchPokemon"]);
   </section>
 </template>
 
-<style lang="sass">
+<style lang="sass" scoped>
 @use '../assets/variables' as v
 
 section
     display: flex
     justify-content: center
+    flex-wrap: wrap
     gap: 1rem
 
     padding: 1rem

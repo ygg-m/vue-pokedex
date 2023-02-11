@@ -35,6 +35,9 @@ nav
   align-items: center
   justify-content: space-between
 
+  h1
+    font-size: 1.5rem
+
   .logo
     display: flex
     align-items: center
